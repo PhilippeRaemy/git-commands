@@ -25,7 +25,7 @@
 ::
 :: For more information, please refer to <http://unlicense.org>
 ::
-setlocal
+setlocal EnableDelayedExpansion
 if "%1"=="" goto :usage
 pushd "%~dp0"
 goto :main
@@ -40,6 +40,17 @@ for %%c in (git-*.cmd) do (
     ) else (
         echo %%c is already installed.
     )
+)
+echo.
+echo Installation is complete.
+echo.
+echo If you like, you can set-up convenience aliases for the commands by
+echo executing following configurations:
+echo.
+for %%c in (git-*.cmd) do (
+    set ALIAS=%%c
+    set ALIAS=!ALIAS:~4,-4!
+    echo git config --global alias.!ALIAS! !ALIAS!.cmd
 )
 goto :EOF
 
