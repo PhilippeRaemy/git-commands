@@ -34,7 +34,12 @@ goto :EOF
 
 :main
 for %%c in (git-*.cmd) do (
-    if not exist "%~1\%%c" mklink "%~1\%%c" "%%~fc" || exit /b 1
+    if not exist "%~1\%%c" (
+        mklink "%~1\%%c" "%%~fc" || exit /b 1
+        echo %%c was installed.
+    ) else (
+        echo %%c is already installed.
+    )
 )
 goto :EOF
 
