@@ -6,7 +6,7 @@ Some commands are designed to run on Windows as a batch script. Use a Git
 alias to avoid having to specify `.cmd` extension and optionally set-up an
 abbreviated name. For example:
 
-    git config --global alias.cim git-diff-commit-modified.cmd
+    git config --global alias.cim diff-commit-modified.cmd
 
 
 ## `git-diff-commit-modified.cmd`
