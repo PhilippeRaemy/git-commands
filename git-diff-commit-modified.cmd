@@ -34,11 +34,11 @@ git st
 echo ----------------------------------------------------------------
 echo Message (blank to abort, "edit" to open in editor):
 set /p MSG=^> 
-if [[%MSG%]]==[[]] (
+if "%MSG%"=="" (
     echo>&2 Aborting commit due to empty commit message.
     echo>&2 Changes will remain staged.
     exit /b 1
-) else if [[%MSG%]]==[[edit]] (
+) else if "%MSG%"=="edit" (
     git ci
 ) else (
     git ci -m "%MSG%"
