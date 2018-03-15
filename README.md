@@ -32,3 +32,9 @@ Does the following:
 
 This is designed to speed-up a simple workflow when making many small and
 atomic commits, especially during a review or refactoring.
+
+### `git-zen.cmd`
+
+Displays [the zen of Git commit messages][zen].
+
+[zen]: https://chris.beams.io/posts/git-commit/#seven-rules
